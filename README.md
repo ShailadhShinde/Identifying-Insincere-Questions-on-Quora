@@ -46,20 +46,6 @@ This project is a Notebook about a Classification problem . An existential probl
 
 - ### About the dataset  <a name="atd"></a>
 
-An insincere question is defined as a question intended to make a statement rather than look for helpful answers. Some characteristics that can signify that a question is insincere:
-
-- Has a non-neutral tone
-  - Has an exaggerated tone to underscore a point about a group of people
-  - Is rhetorical and meant to imply a statement about a group of people
-- Is disparaging or inflammatory
-  - Suggests a discriminatory idea against a protected class of people, or seeks confirmation of a stereotype
-  - Makes disparaging attacks/insults against a specific person or group of people
-  - Based on an outlandish premise about a group of people
-  - Disparages against a characteristic that is not fixable and not measurable
-- Isn't grounded in reality
-  - Based on false information, or contains absurd assumptions
-- Uses sexual content (incest, bestiality, pedophilia) for shock value, and not to seek genuine answers
-  
 `The training data `includes the question that was asked, and whether it was identified as insincere (target = 1). The ground-truth labels contain some amount of noise: they are not guaranteed to be perfect.
 
 - ### Embeddings
@@ -77,22 +63,18 @@ An insincere question is defined as a question intended to make a statement rath
   train date: 20170228 - 20170830
 
   validation: 20170725 - 20170808
+  
 - ### Preprocessing  <a name="pp"></a>
-  Filled missing or negtive promotion and target values with 0.
+    - Used all tokens from both train and test data for our vocabulary
+    - Split by space afterwards using spacy (Spacy tokenizer)
+    - Used glove for embeddings
+    - No truncation of tokens
+    - Tried stemmer, lemmatizer, spell correcter, etc. to find word vectors
+    -  Local solid CV to tune all the hyperparameters
+    
+- ### Model Structure  <a name="fe"></a>
 
-- ### Feature Engineering  <a name="fe"></a>
- 1. #### Basic features
-    * category features: store, family, city, state, type
-    * promotion
-
- 2. #### Statitical features:
-    we use some methods to stat some targets for different keys in different time windows
-    * time windows
-      * nearest days: [1,3,5,7,14,30,60,140]
-      * key：store, store x family 
-    * target: promotion, unit_sales, zeros
-    * method
-      * mean, median, max, min, std
+ 
   
 - ### Evaluation  <a name="eval"></a>
   The evaluation metric used is Root Mean Squared Logarithmic Error. RMSLE = $\sqrt{\frac{1}{n} \sum_{i=1}^n (\log(p_i + 1) - \log(a_i+1))^2 }$
