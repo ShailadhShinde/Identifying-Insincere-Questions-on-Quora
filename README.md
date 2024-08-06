@@ -18,9 +18,7 @@ This project focuses on:
 
 #### -- Project Status: [Completed]
 
-#### -- time_series.py / time_Series.ipynb - Contains code for the project
-
-#### -- eda-time-series.ipynb / EDA.py - Exploratory Data Analysis [Click to view](https://www.kaggle.com/code/shailadh/eda-time-series?scriptVersionId=190759981)
+#### -- quora.py / quora.ipynb - Contains code for the project
 
 ----
 
@@ -65,19 +63,21 @@ This project is a Notebook about a Classification problem . An existential probl
   validation: 20170725 - 20170808
   
 - ### Preprocessing  <a name="pp"></a>
+
     - Used all tokens from both train and test data for our vocabulary
     - Split by space afterwards using spacy (Spacy tokenizer)
     - Used glove for embeddings
     - No truncation of tokens
     - Tried stemmer, lemmatizer, spell correcter, etc. to find word vectors
-    -  Local solid CV to tune all the hyperparameters
+    - Local CV to tune all the hyperparameters
     
 - ### Model Structure  <a name="fe"></a>
 
- 
+ ![Model](https://github.com/ShailadhShinde/Quora/blob/main/assets/model.JPG)
   
 - ### Evaluation  <a name="eval"></a>
-  The evaluation metric used is Root Mean Squared Logarithmic Error. RMSLE = $\sqrt{\frac{1}{n} \sum_{i=1}^n (\log(p_i + 1) - \log(a_i+1))^2 }$
+  The evaluation metric used is F1 Score.
+  ![F1 score](https://github.com/ShailadhShinde/Quora/blob/main/assets/fi.svg)
 
 - ### Model <a name="model"></a>
     16 Light Gradient Boosting Model trained for each day
