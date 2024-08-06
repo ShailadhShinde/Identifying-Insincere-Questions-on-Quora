@@ -27,9 +27,9 @@ This project focuses on:
 ### 📋 Table of Contents
 - [Overview](#overview)
   - [About the dataset](#atd)
-  - [Sample Selection](#ss)
+  - [Embeddings](#embed)
   - [Preprocessing](#pp)
-  - [Feature Engineering](#fe)
+  - [Model Structure](#ms)
   - [Evaluation](#eval)
   - [Model](#model)
 - [Results](#results)
@@ -46,21 +46,14 @@ This project is a Notebook about a Classification problem . An existential probl
 
 `The training data `includes the question that was asked, and whether it was identified as insincere (target = 1). The ground-truth labels contain some amount of noise: they are not guaranteed to be perfect.
 
-- ### Embeddings
+- ### Embeddings <a name="embed"></a>
+
     External data sources are not allowed . Although, they have provided a number of word embeddings along with the dataset that can be used in the models. These are as follows:
 
    - GoogleNews-vectors-negative300 - https://code.google.com/archive/p/word2vec/
    - glove.840B.300d - https://nlp.stanford.edu/projects/glove/
    - paragram_300_sl999 - https://cogcomp.org/page/resource_view/106
    - wiki-news-300d-1M - https://fasttext.cc/docs/en/english-vectors.html
-     
-- ### Sample Selection  <a name="ss"></a>
-
-  Used 2017 data to extract and construct samples
-
-  train date: 20170228 - 20170830
-
-  validation: 20170725 - 20170808
   
 - ### Preprocessing  <a name="pp"></a>
 
@@ -71,16 +64,13 @@ This project is a Notebook about a Classification problem . An existential probl
     - Tried stemmer, lemmatizer, spell correcter, etc. to find word vectors
     - Local CV to tune all the hyperparameters
     
-- ### Model Structure  <a name="fe"></a>
+- ### Model Structure  <a name="ms"></a>
 
  ![Model](https://github.com/ShailadhShinde/Quora/blob/main/assets/model.JPG)
   
 - ### Evaluation  <a name="eval"></a>
   The evaluation metric used is F1 Score.
   ![F1 score](https://github.com/ShailadhShinde/Quora/blob/main/assets/fi.svg)
-
-- ### Model <a name="model"></a>
-    16 Light Gradient Boosting Model trained for each day
 
 ----
 
@@ -89,7 +79,7 @@ This project is a Notebook about a Classification problem . An existential probl
   Got a good score resulting in top 1 % of the kaggle leader board
   
    <p align="center">
-  <img width="60%" src="https://github.com/ShailadhShinde/Time_series/blob/main/assets/score.JPG">
+  <img width="60%" src="https://github.com/ShailadhShinde/Quora/blob/main/assets/score.JPG">
  </p>
 
   
@@ -101,9 +91,9 @@ This project is a Notebook about a Classification problem . An existential probl
  
  - <b>Dataset prerequisite for training</b>:
  
- Before starting to train a model, make sure to download the dataset from <a href="https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data" target="_blank">here </a> or add it to your notebook
+ Before starting to train a model, make sure to download the dataset from <a href="https://www.kaggle.com/competitions/quora-insincere-questions-classification/data" target="_blank">here </a> or add it to your notebook
  ### 🐳 Setting up and Running the project
 
- Just download/copy the files `time_series.py / time_Series.ipynb ` and `EDA.ipynb / EDA.py ` and run them
+ Just download/copy the files `quora.py / quora.ipynb ` and run them (Make sure to enable GPU)
 
   
