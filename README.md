@@ -1,8 +1,10 @@
 
 <div align="center">
 
-![logo](https://github.com/ShailadhShinde/Time_series/blob/main/assets/header.png)  
-<h1 align="center"><strong>Store Sales <h6 align="center">A Time Series Forecasting (CV) project</h6></strong></h1>
+![logo](https://github.com/ShailadhShinde/Quora/blob/main/assets/header.png)  
+<h1 align="center"><strong>Quora Insincere Questions Classification
+
+  <h6 align="center">Detect toxic content to improve online conversations (CV) project</h6></strong></h1>
 
 ![Python - Version](https://img.shields.io/badge/PYTHON-3.9+-blue?style=for-the-badge&logo=python&logoColor=white)
 
@@ -39,20 +41,35 @@ This project focuses on:
 
 ###  📌 Project Overview  <a name="overview"></a>
 
-This project is a Notebook about time series forcasting for store sales.The purpose is to predict sales for 1000s of products sold at favourite stores located in South America’s west coast Ecuador.
+This project is a Notebook about a Classification problem . An existential problem for any major website today is how to handle toxic and divisive content. Quora wants to tackle this problem head-on to keep their platform a place where users can feel safe sharing their knowledge with the world.  On Quora, people can ask questions and connect with others who contribute unique insights and quality answers. A key challenge is to weed out insincere questions those founded upon false premises, or that intend to make a statement rather than look for helpful answers.
+** The purpose is to develop models that identify these insincere questions. **
 
 - ### About the dataset  <a name="atd"></a>
 
-  `The train data` contains time series of the stores and the product families combination. The sales column gives the total sales for a product family at a particular store at a given date. Fractional values are possible since products can be sold in fractional units (1.5 kg of cheese, for instance, as opposed to 1 bag of chips).The onpromotion column gives the total number of items in a product family that were being promoted at a store at a given date.
+An insincere question is defined as a question intended to make a statement rather than look for helpful answers. Some characteristics that can signify that a question is insincere:
 
-  `Stores` data gives some information about stores such as city, state, type, cluster.
+- Has a non-neutral tone
+  - Has an exaggerated tone to underscore a point about a group of people
+  - Is rhetorical and meant to imply a statement about a group of people
+- Is disparaging or inflammatory
+  - Suggests a discriminatory idea against a protected class of people, or seeks confirmation of a stereotype
+  - Makes disparaging attacks/insults against a specific person or group of people
+  - Based on an outlandish premise about a group of people
+  - Disparages against a characteristic that is not fixable and not measurable
+- Isn't grounded in reality
+  - Based on false information, or contains absurd assumptions
+- Uses sexual content (incest, bestiality, pedophilia) for shock value, and not to seek genuine answers
+  
+`The training data `includes the question that was asked, and whether it was identified as insincere (target = 1). The ground-truth labels contain some amount of noise: they are not guaranteed to be perfect.
 
-  `Transaction` data is highly correlated with train's sales column. You can understand the sales patterns of the stores.
+- ### Embeddings
+    External data sources are not allowed . Although, they have provided a number of word embeddings along with the dataset that can be used in the models. These are as follows:
 
-  `Holidays and events` data is a meta data. This data is quite valuable to understand past sales, trend and seasonality components. However, it needs to be arranged. You are going to find a comprehensive data manipulation for this data. That part will be one of the most important chapter in this notebook.
-
-  `Daily Oil Price data` is another data which will help us. Ecuador is an oil-dependent country and it's economical health is highly vulnerable to shocks in oil prices. That's why, it will help us to understand which product families affected in positive or negative way by oil price.
-
+   - GoogleNews-vectors-negative300 - https://code.google.com/archive/p/word2vec/
+   - glove.840B.300d - https://nlp.stanford.edu/projects/glove/
+   - paragram_300_sl999 - https://cogcomp.org/page/resource_view/106
+   - wiki-news-300d-1M - https://fasttext.cc/docs/en/english-vectors.html
+     
 - ### Sample Selection  <a name="ss"></a>
 
   Used 2017 data to extract and construct samples
