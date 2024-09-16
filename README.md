@@ -11,10 +11,9 @@
 </div>
 This project focuses on:
 
-- Exploratory Data Analysis
-- 
--
--
+- Implementation of recurrent neural network layers like BiLSTM, GRU
+- Using word embeddings for text classification
+- Advance Preprocessing on text
 
 #### -- Project Status: [Completed]
 
