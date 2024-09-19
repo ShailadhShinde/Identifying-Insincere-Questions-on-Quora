@@ -69,6 +69,7 @@ This project is a Notebook about a Classification problem . An existential probl
   
 - ### Evaluation  <a name="eval"></a>
   The evaluation metric used is F1 Score.
+
   ![F1 score](https://github.com/ShailadhShinde/Quora/blob/main/assets/fi.svg)
 
 ----
